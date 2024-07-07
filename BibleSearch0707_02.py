@@ -55,12 +55,14 @@ class BibleApp:
 
             result = ""
             collecting = False
+            added_lines = set()  # 追加済みの行を追跡するセット
 
             for line in lines:
                 if f"{start_chapter}:{start_verse}" in line:
                     collecting = True
-                if collecting:
+                if collecting and line not in added_lines:
                     result += line + "\n"  # 節ごとに改行を追加
+                    added_lines.add(line)  # 追加済みの行をセットに追加
                 if f"{end_chapter}:{end_verse}" in line:
                     result += line + "\n"  # 節ごとに改行を追加
                     break
