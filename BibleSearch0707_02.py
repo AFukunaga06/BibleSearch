@@ -3,7 +3,7 @@ from tkinter import ttk
 from tkinter import font
 
 books = ["創世記", "出エジプト記", "レビ記", "民数記", "申命記"]  # 聖書の巻を追加
-
+#何処かちがってます。
 # ここに他の巻のファイルも追加
 book_files = {
     "創世記": "創世記.txt",
